@@ -12,28 +12,28 @@ Vue.component('my-component', {
 export default new Vuetify({
     customProperties: true,
     theme: {
-        // themes: {
-        //     light: {
-        //         primary: "#3571FF",
-        //         secondary: "#9FA2B4",
-        //         accent: "#A989EE",
-        //         error: "#FB104A",
-        //         info: "#2196F3",
-        //         success: "#29CC97",
-        //         warning: "#FEC400",
-        //         dark: "#252733"
-        //     },
-        //     dark: {
-        //         primary: "#3571FF",
-        //         secondary: "#9FA2B4",
-        //         accent: "#A989EE",
-        //         error: "#FB104A",
-        //         info: "#2196F3",
-        //         success: "#29CC97",
-        //         warning: "#FEC400",
-        //         dark: "#252733"
-        //     }
-        // }
+        themes: {
+            light: {
+                primary: "#3571FF",
+                secondary: "#9FA2B4",
+                accent: "#A989EE",
+                error: "#FB104A",
+                info: "#2196F3",
+                success: "#29CC97",
+                warning: "#FEC400",
+                dark: "#252733"
+            },
+            dark: {
+                primary: "#3571FF",
+                secondary: "#9FA2B4",
+                accent: "#A989EE",
+                error: "#FB104A",
+                info: "#2196F3",
+                success: "#29CC97",
+                warning: "#FEC400",
+                dark: "#252733"
+            }
+        }
     },
     lang: {
         locales: { es },

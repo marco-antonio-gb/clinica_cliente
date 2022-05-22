@@ -2,7 +2,7 @@
 <v-app id="inspire">
     <v-navigation-drawer  dark v-model="drawer" app>
         <template v-slot:prepend>
-            <v-list-item>
+            <v-list-item class="my-2">
                 <v-list-item-avatar tile class="mr-2">
                     <img src="@/assets/images/logos/ic_clinica.svg" />
                 </v-list-item-avatar>
@@ -12,14 +12,14 @@
                 </v-list-item-content>
             </v-list-item>
         </template>
-        <!-- <v-divider></v-divider> -->
+        <v-divider></v-divider>
         <Sidebar></Sidebar>
     </v-navigation-drawer>
     <v-app-bar  flat app>
         <v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
         <v-spacer></v-spacer>
         <span v-if="authenticated">{{ usuario.data.settings.userName }}</span>
-        <v-menu :nudge-width="250" max-width="245" offset-y :close-on-content-click="false">
+        <v-menu :nudge-width="260" max-width="260"  offset-y :close-on-content-click="false">
             <template v-slot:activator="{ on }">
                 <v-btn icon v-on="on">
                     <v-avatar :color="usuario.data.settings.avatarColor" size="36" v-if="authenticated">

@@ -20,7 +20,7 @@ export default {
             }
         },
         /**
-         * Create new Usuario   
+         * Create new Usuario
          */
         async create() {
             this.onSave = true;
@@ -235,8 +235,10 @@ export default {
         },
         generateRandomUser() {
             let username = "";
+
             username = this.randomPassword(10) + "@campoferial3dejulio.com";
             this.usuario.email = username;
+
         },
         randomPassword(length) {
             var chars = "abcdefghijklmnopqrstuvwxyz1234567890";

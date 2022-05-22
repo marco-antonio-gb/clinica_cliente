@@ -10,12 +10,19 @@ const UnauthorizedEvent = () => import("../components/pages/UnauthorizedEvent.vu
 const ForbiddenContent = () => import("../components/pages/ForbiddenContent.vue");
 const TokenExpired = () => import("../components/pages/TokenExpired.vue");
 const PageNotFound = () => import("../components/pages/PageNotFound.vue");
+/* PESONAS */
+const Persona = () => import("../modules/Personas/Personas.vue");
+const PersonaList = () => import("../modules/Personas/views/List.vue");
+const PersonaCreate = () => import("../modules/Personas/views/Create.vue");
+const PersonaDetail = () => import("../modules/Personas/views/Detail.vue");
+const PersonaUpdate = () => import("../modules/Personas/views/Update.vue");
 /* USUARIOS */
 const Usuario = () => import("../modules/Usuarios/Usuarios.vue");
 const UsuarioList = () => import("../modules/Usuarios/views/UsuarioList.vue");
 const UsuarioCreate = () => import("../modules/Usuarios/views/UsuarioCreate.vue");
 const UsuarioDetail = () => import("../modules/Usuarios/views/UsuarioDetail.vue");
 const UsuarioUpdate = () => import("../modules/Usuarios/views/UsuarioUpdate.vue");
+
 /*  PERFIL DE USUARIO */
 // const Perfil = () => import("../modules/Perfil/Perfil.vue");
 // const PerfilDetail = () => import("../modules/Perfil/views/PerfilDetail.vue");
@@ -59,6 +66,48 @@ export const router = new Router({
                         description: "Pagina Principal",
                         requiresAuth: true
                     }
+                },
+                {
+                    path: "/personas",
+                    component: Persona,
+                    children: [
+                        {
+                            path: "/",
+                            name: "personaList",
+                            component: PersonaList,
+                            meta: {
+                                title: "Personas",
+                                permissions: ["Administrador"]
+                            }
+                        },
+                        {
+                            path: "/personas/create",
+                            name: "personaCreate",
+                            component: PersonaCreate,
+                            meta: {
+                                title: "Crear persona",
+                                permissions: ["Administrador"]
+                            }
+                        },
+                        {
+                            path: "/personas/detail/:idPersona",
+                            name: "personaDetail",
+                            component: PersonaDetail,
+                            meta: {
+                                title: "Informacion del persona",
+                                permissions: ["Administrador"]
+                            }
+                        },
+                        {
+                            path: "/personas/update/:idPersona",
+                            name: "personaUpdate",
+                            component: PersonaUpdate,
+                            meta: {
+                                title: "Actualizar informacion del persona",
+                                permissions: ["Administrador"]
+                            }
+                        }
+                    ]
                 },
                 {
                     path: "/usuarios",
